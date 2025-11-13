@@ -1,0 +1,10 @@
+trigger: none
+pool: agent_ka_jhund
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'saurabh pipeline service connection'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az group list'
