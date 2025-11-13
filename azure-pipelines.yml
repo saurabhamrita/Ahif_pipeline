@@ -1,10 +1,14 @@
 trigger: none
 pool: agent_ka_jhund
-
 steps:
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'saurabh pipeline service connection'
     scriptType: 'ps'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az group list'
+    inlineScript: |
+      cd environment/dev
+      terraform init
+      terraform fmt
+      terraform validate
+      terraform plan
