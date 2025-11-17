@@ -29,3 +29,9 @@ resource_groups = var.resource_groups
 #  vms = var.vms 
 #  depends_on = [ module.public_ip ,module.resource_group, module.virtual_networks, module.key_vault ]
 # }
+
+# module "azurerm_storage_account" {
+# source = "../../Module/azurerm_storage_account"
+#  storage_accounts = var.storage_accounts 
+#  depends_on = [ module.resource_group ]
+# }
